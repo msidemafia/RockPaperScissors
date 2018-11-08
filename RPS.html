@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+    console.log("test")
+    var userChoices = ["r", "p", "s"]
+    var computerChoices = ["r", "p", "s"];
+    var userName = prompt("What's your name?")
+    var realName = alert("Do you think you're special, " + userName + "?")
+    var chooseRps = alert("Choose 'r' for rock, 'p' for paper, or 's' for scissors")
+
+    document.onkeyup = function(event) {
+
+      var userGuess = event.key;
+      var userGuessValue
+      console.log(userGuess)
+      for (var i=0; i < userChoices.length; i++) {
+        if (userGuess == userChoices[i]) {
+            userGuessValue = i
+        }
+      }
+        console.log (userGuessValue)
+
+      var randomNumber = Math.floor(Math.random() * computerChoices.length);
+      var computerGuess = computerChoices[randomNumber]
+      console.log(computerGuess)
+      var value = userGuessValue - randomNumber;
+      console.log(value)
+
+      alert("User guess: " + userGuess);
+      alert("Computer guess: " + computerGuess);
+
+      if (value == 0) {
+        alert("Tie!")
+      } 
+      else if (value == 1||value == -2) {
+        alert("You Win, " + userName + "!!")
+      }
+      else if(value == -1||value == 2) {
+        alert("You Lose, " + userName + "!!")
+      }
+
+    };
+  </script>
+
+</body>
+
+</html>
